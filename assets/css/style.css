@@ -1,0 +1,491 @@
+/* ==========================================================================
+   KRLBRYN — Under Construction
+   Base styles
+   ========================================================================== */
+
+:root {
+  --color-red: #8B0000;
+  --color-red-dark: #6b0000;
+  --color-red-soft: rgba(139, 0, 0, 0.08);
+  --color-charcoal: #161616;
+  --color-footer: #1a1a1f;
+  --color-white: #FFFFFF;
+  --color-offwhite: #FAFAF8;
+  --color-lightgray: #F3F3F3;
+  --color-border: #E4E1DA;
+  --color-text-muted: #55534f;
+
+  --font-primary: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+
+  --container-width: 1100px;
+  --space-section: 96px;
+}
+
+* ,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-offwhite);
+  color: var(--color-charcoal);
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 12px;
+  z-index: 1000;
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  padding: 10px 18px;
+  border-radius: 4px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Background effect layer
+   ========================================================================== */
+
+.background-effect {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#bg-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Brand header
+   ========================================================================== */
+
+.brand-header {
+  position: relative;
+  overflow: hidden;
+  padding-top: 88px;
+  padding-bottom: 8px;
+}
+
+.brand-header__inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.brand-logo {
+  margin: 0 auto 28px;
+}
+
+.brand-name {
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: var(--color-charcoal);
+  margin: 0 0 16px;
+  padding-left: 0.28em; /* balance letter-spacing on last char */
+}
+
+.brand-tagline {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  color: var(--color-red);
+  padding-left: 0.32em;
+}
+
+/* Decorative architectural line art */
+.deco {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.deco-topleft {
+  top: 20px;
+  left: 24px;
+  width: 220px;
+  height: 140px;
+}
+
+.deco-topleft svg {
+  width: 100%;
+  height: 100%;
+}
+
+.deco-topright {
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 260px;
+}
+
+.deco-wedge {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: var(--color-red);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  opacity: 0.95;
+}
+
+.deco-dots {
+  position: absolute;
+  top: 90px;
+  right: 30px;
+  width: 90px;
+  height: 90px;
+}
+
+.deco-bottomleft {
+  display: none;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  text-align: center;
+  padding-top: 56px;
+  padding-bottom: 24px;
+}
+
+.hero-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--color-red);
+  margin-bottom: 18px;
+}
+
+.hero-heading {
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 26px;
+}
+
+.text-charcoal {
+  color: var(--color-charcoal);
+}
+
+.text-red {
+  color: var(--color-red);
+}
+
+.hero-divider {
+  width: 64px;
+  height: 3px;
+  background: var(--color-red);
+  margin: 0 auto 26px;
+  border-radius: 2px;
+}
+
+.hero-copy {
+  font-size: 17px;
+  color: var(--color-text-muted);
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Illustration
+   ========================================================================== */
+
+.illustration-wrap {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.illustration {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  display: block;
+}
+
+/* ==========================================================================
+   Contact band
+   ========================================================================== */
+
+.contact-band {
+  background: var(--color-red);
+  margin-top: 40px;
+  padding: 56px 0;
+}
+
+.contact-band__inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.contact-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.contact-heading {
+  color: var(--color-white);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.contact-copy {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.contact-email {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--color-white);
+  font-size: 19px;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.55);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-email:hover,
+.contact-email:focus-visible {
+  border-color: var(--color-white);
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   Services strip
+   ========================================================================== */
+
+.services {
+  padding: 64px 32px 88px;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.service-item {
+  text-align: left;
+}
+
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid var(--color-red);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.service-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.service-item h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--color-charcoal);
+}
+
+.service-item p {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  background: var(--color-footer);
+  color: var(--color-white);
+  padding-top: 56px;
+}
+
+.site-footer__inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 44px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.footer-name {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.footer-tagline {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-red);
+}
+
+.footer-links h3,
+.footer-contact h3 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-red);
+  margin-bottom: 18px;
+}
+
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.78);
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--color-white);
+}
+
+.is-soon {
+  cursor: default;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.soon-badge {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+  padding: 1px 6px;
+}
+
+.footer-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease;
+}
+
+.footer-email:hover,
+.footer-email:focus-visible {
+  color: var(--color-white);
+}
+
+.footer-bottom {
+  padding: 22px 0;
+}
+
+.footer-bottom p {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
