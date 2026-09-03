@@ -5,10 +5,10 @@
 
 :root {
   --color-red: #8B0000;
-  --color-red-dark: #6b0000;
+  --color-red-dark: #6F0000;
   --color-red-soft: rgba(139, 0, 0, 0.08);
-  --color-charcoal: #161616;
-  --color-footer: #1a1a1f;
+  --color-red-on-dark: #D65A5A; /* lighter tint for AA contrast on charcoal */
+  --color-charcoal: #171717;
   --color-white: #FFFFFF;
   --color-offwhite: #FAFAF8;
   --color-lightgray: #F3F3F3;
@@ -18,7 +18,6 @@
   --font-primary: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 
   --container-width: 1100px;
-  --space-section: 96px;
 }
 
 * ,
@@ -117,86 +116,33 @@ h1, h2, h3, p {
    ========================================================================== */
 
 .brand-header {
-  position: relative;
-  overflow: hidden;
-  padding-top: 88px;
+  padding-top: 96px;
   padding-bottom: 8px;
 }
 
 .brand-header__inner {
-  position: relative;
-  z-index: 2;
   text-align: center;
 }
 
 .brand-logo {
-  margin: 0 auto 28px;
+  margin: 0 auto 24px;
 }
 
 .brand-name {
-  font-size: 44px;
+  font-size: 42px;
   font-weight: 700;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.26em;
   color: var(--color-charcoal);
   margin: 0 0 16px;
-  padding-left: 0.28em; /* balance letter-spacing on last char */
+  padding-left: 0.26em; /* balance letter-spacing on last char */
 }
 
 .brand-tagline {
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.3em;
   color: var(--color-red);
-  padding-left: 0.32em;
-}
-
-/* Decorative architectural line art */
-.deco {
-  position: absolute;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.deco-topleft {
-  top: 20px;
-  left: 24px;
-  width: 220px;
-  height: 140px;
-}
-
-.deco-topleft svg {
-  width: 100%;
-  height: 100%;
-}
-
-.deco-topright {
-  top: 0;
-  right: 0;
-  width: 320px;
-  height: 260px;
-}
-
-.deco-wedge {
-  position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 220px;
-  height: 220px;
-  background: var(--color-red);
-  clip-path: polygon(100% 0, 0 0, 100% 100%);
-  opacity: 0.95;
-}
-
-.deco-dots {
-  position: absolute;
-  top: 90px;
-  right: 30px;
-  width: 90px;
-  height: 90px;
-}
-
-.deco-bottomleft {
-  display: none;
+  padding-left: 0.3em;
 }
 
 /* ==========================================================================
@@ -205,8 +151,8 @@ h1, h2, h3, p {
 
 .hero {
   text-align: center;
-  padding-top: 56px;
-  padding-bottom: 24px;
+  padding-top: 64px;
+  padding-bottom: 88px;
 }
 
 .hero-eyebrow {
@@ -218,7 +164,7 @@ h1, h2, h3, p {
 }
 
 .hero-heading {
-  font-size: 58px;
+  font-size: 56px;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.01em;
@@ -249,32 +195,14 @@ h1, h2, h3, p {
 }
 
 /* ==========================================================================
-   Illustration
+   Contact
    ========================================================================== */
 
-.illustration-wrap {
-  padding-top: 40px;
-  padding-bottom: 20px;
+.contact {
+  padding-bottom: 96px;
 }
 
-.illustration {
-  width: 100%;
-  height: auto;
-  max-height: 420px;
-  display: block;
-}
-
-/* ==========================================================================
-   Contact band
-   ========================================================================== */
-
-.contact-band {
-  background: var(--color-red);
-  margin-top: 40px;
-  padding: 56px 0;
-}
-
-.contact-band__inner {
+.contact__inner {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -286,27 +214,23 @@ h1, h2, h3, p {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--color-red-soft);
+  color: var(--color-red);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 8px;
 }
 
-.contact-icon svg {
-  width: 26px;
-  height: 26px;
-}
-
 .contact-heading {
-  color: var(--color-white);
-  font-size: 15px;
+  color: var(--color-red);
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.24em;
 }
 
 .contact-copy {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-muted);
   font-size: 15px;
   line-height: 1.6;
 }
@@ -314,18 +238,18 @@ h1, h2, h3, p {
 .contact-email {
   display: inline-block;
   margin-top: 6px;
-  color: var(--color-white);
-  font-size: 19px;
+  color: var(--color-red);
+  font-size: 20px;
   font-weight: 700;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.55);
+  border-bottom: 2px solid transparent;
   padding-bottom: 2px;
-  transition: border-color 0.2s ease, opacity 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .contact-email:hover,
 .contact-email:focus-visible {
-  border-color: var(--color-white);
-  opacity: 0.9;
+  border-color: var(--color-red);
+  color: var(--color-red-dark);
 }
 
 /* ==========================================================================
@@ -333,39 +257,51 @@ h1, h2, h3, p {
    ========================================================================== */
 
 .services {
-  padding: 64px 32px 88px;
+  padding: 0 32px 96px;
+  border-top: 1px solid var(--color-border);
 }
 
 .services-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  padding-top: 64px;
 }
 
 .service-item {
   text-align: left;
+  padding: 0 28px;
+}
+
+.service-item + .service-item {
+  border-left: 1px solid var(--color-border);
 }
 
 .service-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-  border: 1.5px solid var(--color-red);
-  border-radius: 8px;
-  margin-bottom: 16px;
+  display: block;
+  width: 22px;
+  height: 22px;
+  color: var(--color-red);
+  opacity: 0.7;
+  margin-bottom: 14px;
 }
 
 .service-icon svg {
-  width: 22px;
-  height: 22px;
+  width: 100%;
+  height: 100%;
+}
+
+.service-number {
+  display: block;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-red);
+  margin-bottom: 10px;
 }
 
 .service-item h3 {
   font-size: 15px;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   color: var(--color-charcoal);
 }
 
@@ -380,17 +316,20 @@ h1, h2, h3, p {
    ========================================================================== */
 
 .site-footer {
-  background: var(--color-footer);
+  position: relative;
+  background: var(--color-charcoal);
+  background-image: radial-gradient(rgba(139, 0, 0, 0.35) 1px, transparent 1px);
+  background-size: 26px 26px;
+  background-position: -6px -6px;
   color: var(--color-white);
-  padding-top: 56px;
 }
 
 .site-footer__inner {
+  position: relative;
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
   gap: 32px;
-  padding-bottom: 44px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 64px 0;
 }
 
 .footer-logo-row {
@@ -401,16 +340,22 @@ h1, h2, h3, p {
 }
 
 .footer-name {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
 }
 
 .footer-tagline {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.2em;
-  color: var(--color-red);
+  color: var(--color-red-on-dark);
+  margin-bottom: 20px;
+}
+
+.footer-copyright {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .footer-links h3,
@@ -418,7 +363,7 @@ h1, h2, h3, p {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.18em;
-  color: var(--color-red);
+  color: var(--color-red-on-dark);
   margin-bottom: 18px;
 }
 
@@ -468,16 +413,6 @@ h1, h2, h3, p {
 .footer-email:hover,
 .footer-email:focus-visible {
   color: var(--color-white);
-}
-
-.footer-bottom {
-  padding: 22px 0;
-}
-
-.footer-bottom p {
-  font-size: 12.5px;
-  color: rgba(255, 255, 255, 0.55);
-  text-align: center;
 }
 
 /* ==========================================================================

@@ -26,9 +26,9 @@
   var resizeTimeout = null;
 
   var RED = '139, 0, 0';
-  var LINE_ALPHA = 0.06;
-  var LINE_ALPHA_NEAR = 0.16;
-  var NODE_ALPHA = 0.28;
+  var LINE_ALPHA = 0.09;
+  var LINE_ALPHA_NEAR = 0.2;
+  var NODE_ALPHA = 0.32;
   var LINK_DIST = 150;
   var CURSOR_RADIUS = 170;
   var MAX_DISPLACEMENT = 6;

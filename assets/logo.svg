@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 210" role="img" aria-labelledby="title desc">
+  <title id="title">KRLBRYN</title>
+  <desc id="desc">Dark red geometric K mark above the KRLBRYN wordmark and tagline.</desc>
+  <g transform="translate(132,0) scale(.50)">
+    <path fill="#8B0000" d="M61 48h65l-64 69 64 91H61l-39-56v-80z"/>
+    <path fill="#8B0000" d="M126 48h69l-68 69 68 91h-69l-67-91z"/>
+  </g>
+  <text x="260" y="142" text-anchor="middle" font-family="Montserrat, Arial, sans-serif"
+        font-size="54" font-weight="700" letter-spacing="10" fill="#171717">KRLBRYN</text>
+  <text x="260" y="178" text-anchor="middle" font-family="Montserrat, Arial, sans-serif"
+        font-size="13" font-weight="600" letter-spacing="5" fill="#8B0000">APPS. SYSTEMS. SOLUTIONS.</text>
+</svg>

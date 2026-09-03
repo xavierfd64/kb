@@ -6,7 +6,15 @@
 @media (max-width: 1024px) {
   .services-list {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 36px;
+    row-gap: 40px;
+  }
+
+  .service-item + .service-item {
+    border-left: 1px solid var(--color-border);
+  }
+
+  .service-item:nth-child(2n+1) {
+    border-left: none;
   }
 
   .site-footer__inner {
@@ -17,68 +25,45 @@
     grid-column: 1 / -1;
     margin-bottom: 8px;
   }
-
-  .illustration {
-    max-height: 340px;
-  }
 }
 
 @media (max-width: 860px) {
   .hero-heading {
-    font-size: 46px;
-  }
-
-  .deco-topright {
-    width: 220px;
-    height: 180px;
-  }
-
-  .deco-wedge {
-    width: 160px;
-    height: 160px;
-    top: -50px;
-    right: -50px;
-  }
-
-  .deco-dots {
-    display: none;
+    font-size: 44px;
   }
 }
 
 /* Mobile */
 @media (max-width: 640px) {
-  :root {
-    --space-section: 56px;
-  }
-
   .container {
     padding: 0 20px;
   }
 
   .brand-header {
-    padding-top: 56px;
+    padding-top: 64px;
   }
 
   .brand-logo {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     margin-bottom: 18px;
   }
 
   .brand-name {
-    font-size: 28px;
-    letter-spacing: 0.18em;
-    padding-left: 0.18em;
+    font-size: 26px;
+    letter-spacing: 0.16em;
+    padding-left: 0.16em;
   }
 
   .brand-tagline {
-    font-size: 10.5px;
-    letter-spacing: 0.22em;
-    padding-left: 0.22em;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    padding-left: 0.2em;
   }
 
   .hero {
-    padding-top: 40px;
+    padding-top: 44px;
+    padding-bottom: 56px;
   }
 
   .hero-eyebrow {
@@ -86,7 +71,7 @@
   }
 
   .hero-heading {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .hero-copy {
@@ -94,17 +79,8 @@
     padding: 0 8px;
   }
 
-  .illustration-wrap {
-    padding-top: 24px;
-  }
-
-  .illustration {
-    max-height: 220px;
-  }
-
-  .contact-band {
-    padding: 40px 0;
-    margin-top: 24px;
+  .contact {
+    padding-bottom: 56px;
   }
 
   .contact-email {
@@ -113,44 +89,40 @@
   }
 
   .services {
-    padding: 48px 20px 56px;
+    padding: 0 20px 56px;
   }
 
   .services-list {
     grid-template-columns: 1fr;
-    gap: 28px;
+    row-gap: 32px;
+    padding-top: 48px;
+  }
+
+  .service-item {
+    padding: 0;
+    border-left: none !important;
+    border-top: 1px solid var(--color-border);
+    padding-top: 28px;
+  }
+
+  .service-item:first-child {
+    border-top: none;
+    padding-top: 0;
   }
 
   .site-footer__inner {
     grid-template-columns: 1fr;
-    gap: 28px;
-    padding-bottom: 32px;
-  }
-
-  .deco-topleft {
-    width: 140px;
-    height: 90px;
-  }
-
-  .deco-topright {
-    width: 160px;
-    height: 140px;
-  }
-
-  .deco-wedge {
-    width: 110px;
-    height: 110px;
-    top: -40px;
-    right: -40px;
+    gap: 32px;
+    padding: 48px 0;
   }
 }
 
 @media (max-width: 390px) {
   .brand-name {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .hero-heading {
-    font-size: 28px;
+    font-size: 27px;
   }
 }
